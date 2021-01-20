@@ -348,7 +348,7 @@ hr {
   background-color: #2d4059;
   -webkit-transition: all 350ms ease-in-out;
   transition: all 350ms ease-in-out;
-  padding: 0.6em 1.4em;
+  padding: 0.6em 0.8em;
   font-weight: 500;
   font-size: 2rem;
   border-radius: 1rem;
@@ -357,103 +357,6 @@ hr {
 .btn:hover {
   background-color: #cf9203;
   color: #f6f6f6;
-}
-
-/* Modal start */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  max-width: 80%;
-  max-height: 90%;
-  border-radius: 1rem;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: #f6f6f6;
-  padding: 2em 3em;
-  -webkit-box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  overflow: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.modal--show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal img {
-  margin: 0 auto;
-  border-radius: 1rem;
-}
-
-.modal::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-.modal__header {
-  font-size: 2.6rem;
-  margin-bottom: 0.5em;
-  line-height: 1;
-}
-
-.modal p {
-  padding: 1.5em 0;
-  font-size: 1.8rem;
-}
-
-.btn--close-modal {
-  font-family: inherit;
-  color: #cf4a4a;
-  position: absolute;
-  top: 0;
-  right: 1.5rem;
-  font-size: 6rem;
-  cursor: pointer;
-  border: none;
-  background: none;
-  z-index: 200;
-}
-
-.btn--close-modal:hover,
-.btn--close-modal:focus {
-  opacity: 0.7;
-}
-
-.modal__content {
-  padding: 1.5em 0;
-}
-
-.modal__content img {
-  width: 90%;
-  max-width: 40rem;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.overlay--show {
-  visibility: visible;
-  opacity: 1;
 }
 
 /* About Section */
@@ -520,13 +423,36 @@ hr {
 }
 
 .portfolio__item {
-  margin-top: 1.5em;
   padding-right: 1em;
   padding-left: 1em;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.3333333333%;
           flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.portfolio__item__img {
+  position: relative;
+}
+
+.portfolio__item__img .btn {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 330ms ease-in-out;
+  transition: all 330ms ease-in-out;
 }
 
 .portfolio__item h4 {
@@ -545,8 +471,20 @@ hr {
   border-top-right-radius: 1rem;
 }
 
-.portfolio__item img:hover {
-  opacity: 0.8;
+.portfolio__item__info {
+  background: #e0e0e0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.portfolio__item__info span {
+  display: block;
+}
+
+.portfolio__item__img:hover .btn {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Copyright Section */
@@ -628,20 +566,32 @@ footer {
   }
 }
 
-/* Utilities */
-.padding-1 {
-  padding: 0.6em 0;
+/* Extra Classes */
+.pad-tb-1 {
+  padding: 1em 0;
 }
 
-.padding-2 {
-  padding: 1.5em 0;
+.pad-tb-05 {
+  padding: 0.5em 0;
 }
 
-.margin {
-  margin: 1.5em 0;
+.mar-tb-1 {
+  margin: 1em 0;
 }
 
-.padding {
+.mar-b-2 {
+  margin-bottom: 2em;
+}
+
+.mar-tb-2 {
+  margin: 2em 0;
+}
+
+.pad-1 {
+  padding: 1em;
+}
+
+.pad-2 {
   padding: 2em;
 }
 
@@ -665,7 +615,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1100px) {
   .portfolio__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
@@ -707,28 +657,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 830px) {
-  .modal {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    padding-top: 3.5em;
-    max-width: initial;
-    max-height: initial;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-  }
-  .overlay {
-    display: none;
-  }
-  .btn--close-modal {
-    font-size: 8rem;
-    top: -1.2rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 760px) {
   .portfolio__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;

@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "title": "moviePro",
+      "description": "An app for movie searching. Created with Vanilla Javascript.",
+      "img": "./img/portfolio/mvp.jpg",
+      "fonts": "Poppins",
+      "files": "HTML, CSS, JS",
+      "icons": "Font Awesome",
+      "api": "TMDB",
+      "link": "https://pro-movie.netlify.app/"
+    },
+    {
+      "title": "Vintage Store",
+      "description": "Online store app created with Vanilla Javascript.",
+      "img": "./img/portfolio/vnt.jpg",
+      "fonts": "Noto Sans JP, Yesteryear",
+      "files": "HTML, CSS, JS",
+      "icons": "Font Awesome",
+      "api": "Contentful, Local Storage",
+      "link": "https://store-vintage.netlify.app/"
+    },
+    {
+      "title": "secMessage",
+      "description": "Secret message sharing app. Created with Vanilla Javascript.",
+      "img": "./img/portfolio/msg.jpg",
+      "fonts": "Ubuntu",
+      "files": "HTML, CSS, JS",
+      "icons": "",
+      "api": "",
+      "link": "https://sec-message.netlify.app/"
+    },
+    {
+      "title": "movieVersus",
+      "description": "An app for comparing movies. Created with Vanilla Javascript.",
+      "img": "./img/portfolio/mvrs.jpg",
+      "fonts": "Poppins",
+      "files": "HTML, CSS, JS",
+      "icons": "",
+      "api": "OMDb",
+      "link": "https://movie-versus.netlify.app/"
+    },
+    {
+      "title": "getCountry",
+      "description": "An app for searching countries. Created with Vanilla Javascript.",
+      "img": "./img/portfolio/cntrs.jpg",
+      "fonts": "Source Sans Pro",
+      "files": "HTML, CSS, JS",
+      "icons": "Font Awesome",
+      "api": "REST Countries",
+      "link": "https://getcountry.netlify.app/"
+    },
+    {
+      "title": "MoviesHD",
+      "description": "HTML/CSS template for Movies App",
+      "img": "./img/portfolio/mhd.jpg",
+      "fonts": "Source Sans Pro",
+      "files": "HTML, CSS, JS (Vanilla Javascript)",
+      "icons": "Font Awesome",
+      "api": "",
+      "link": "https://movies-hd.netlify.app/"
+    },
+    {
+      "title": "Portfolio",
+      "description": "HTML/CSS Template for a Portfolio Web-site.",
+      "img": "./img/portfolio/prt.jpg",
+      "fonts": "Karma",
+      "files": "HTML, CSS, JS (Vanilla Javascript)",
+      "icons": "",
+      "api": "",
+      "link": "https://sergij14.netlify.app/"
+    },
+    {
+      "title": "guessNumber",
+      "description": "An App created with Vanilla Javascript.",
+      "img": "./img/portfolio/guessnmbr.jpg",
+      "fonts": "Press Start",
+      "files": "HTML, CSS, JS",
+      "icons": "",
+      "api": "",
+      "link": "https://guess-numb.netlify.app/"
+    }
+  ]
+}
