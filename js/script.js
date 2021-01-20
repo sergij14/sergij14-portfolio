@@ -1,15 +1,28 @@
+import "regenerator-runtime/runtime";
+import "core-js/stable";
+
+const client = contentful.createClient({
+  space: "5errz0iwjsls",
+  accessToken: "M2fbKbJSZ1-Rk56Nd84fPGjuWNgqfIwXPhuQXCDAjb4",
+});
+
 const itemsContainer = document.querySelector(".portfolio__row");
 
 const getItems = async function () {
-  const resp = await fetch("./items.json");
-  const data = await resp.json();
-  const items = data.items;
-  renderItems(items);
+  try {
+    const contentful = await client.getEntries({ content_type: "portfolio" });
+    let items = contentful.items;
+    renderItems(items);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const renderItems = function (items) {
   items.forEach((item) => {
-    const { title, description, img, fonts, files, icons, api, link } = item;
+    const img = item.fields.img.fields.file.url;
+    const { title, description, fonts, files, icons, api, link } = item.fields;
+
     itemsContainer.insertAdjacentHTML(
       "beforeend",
       ` 
